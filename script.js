@@ -5,7 +5,9 @@ widthInput = document.querySelector('.width input')
 heightInput = document.querySelector('.height input')
 const Cropbtn = document.getElementById('Cropbtn')
 const SelectedImg = document.getElementById('image_crop')
-const frame1_img = document.getElementById('frame1_img')
+downdloadBtn = document.querySelector('.download-btn')
+
+
 const loadfile = (e) => {
     const file = e.target.files[0] //getting the first user selected file
     if (!file) return;//return if user hasn't selected file
@@ -16,9 +18,11 @@ const loadfile = (e) => {
         ogImageRatio = previewImg.naturalWidth / previewImg.naturalHeight
         document.querySelector('.wrapper').classList.add('active')
     })
-    frame1_img.src=previewImg.src
 
 }
+
+
+
 Cropbtn.addEventListener('click', () => {
     
     SelectedImg.src =previewImg.src
@@ -34,9 +38,16 @@ Cropbtn.addEventListener('click', () => {
         previewImg.src = cropper.getCroppedCanvas().toDataURL()
         popupContainer.style.display = 'none';
     })
-
 })
 
+
+function downloadImage(url, filename) {
+    var link = document.createElement('a');
+    link.href = previewImg.src;
+    link.download = 'images.png';
+    link.click();
+}
+  downdloadBtn.addEventListener('click',downloadImage)
 fileInput.addEventListener("change", loadfile)
 uploadBox.addEventListener('click', () => fileInput.click())
 
