@@ -147,7 +147,7 @@ body{
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  padding: 5px 5px;
+  padding: 5px 30px;
   background: #0099ff;
   text-transform: uppercase;
 }
@@ -216,3 +216,28 @@ body{
   padding: 20px;
   border-radius: 20px;
 }
+
+
+.image-container {
+  height: 100px;
+  text-align: center;
+}
+
+.image-container img {
+  width: 100px;
+}
+
+#hidden{display: none;} 
+
+.file-container {
+  padding: 3px;
+  border-top: 2px solid black;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.title_frame{
+  text-align: center;
+}
+
+
