@@ -9,12 +9,12 @@ downdloadBtn = document.querySelector('.download-btn')
 
 
 const loadfile = (e) => {
-    const file = e.target.files[0] //getting the first user selected file
-    if (!file) return;//return if user hasn't selected file
+    const file = e.target.files[0] 
+    if (!file) return;
     previewImg.src = URL.createObjectURL(file)
     previewImg.addEventListener("load", () => {
-        widthInput.value = previewImg.naturalWidth //naturalWidth return the original width
-        heightInput.value = previewImg.naturalHeight//naturalHeight return the original height
+        widthInput.value = previewImg.naturalWidth 
+        heightInput.value = previewImg.naturalHeight
         ogImageRatio = previewImg.naturalWidth / previewImg.naturalHeight
         document.querySelector('.wrapper').classList.add('active')
     })
